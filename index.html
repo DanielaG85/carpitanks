@@ -3,28 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carpitanks - Demo</title>
+  <title>Carpitanks</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="contenedor">
-    <!-- <h1>Carpitanks</h1> -->
-    <div class="imagen-carpi"><img src="./assets/carpitanks.png" alt=""></div>
-    <p class="subtitulo">La demo jugable estará disponible el <strong>miércoles 25 de junio</strong></p>
+  <header>
+    <div class="header-background">
+      
+      <div class="header-contenido">
+      <!-- Imagen a la izquierda -->
+      <img src="./assets/carpitanks.png" class="tank-image" alt="carpitank">
 
-    <!-- Contador (opcional) -->
-    <div id="contador"></div>
+      <!-- Botón CTA a la derecha -->
+      <div class="cta-container">
+        <h1 class="titulo-juego">¡Unete a la Resistencia!</h1>
+        <a href="#prototipo" class="btn-cta">Jugar Ahora</a>
+      </div>
+    </div>
+    </div>
+      <nav>
+      <ul>
+        <li><a href="#trailer">Trailer</a></li> 
+        <li><a href="#personajes">Personajes</a></li>       
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#impacto">Impacto Cultural</a></li>
+        <li><a href="#prototipo">Prototipo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="trailer" class="trailer-container">
+      <span class="trailer-text">Ayuda a los carpinchos a escapar del dominio humano, unete a la resistencia
+          y conquista nuevos mundos en busca de un hogar.</span>
+      <div class="trailer">
+        <video src="./assets/Carpitanks trailer.mp4" controls></video>
+      </div>
+      
+   </section>
+    <section id="personajes" class="text-container">
+      
+      <h2 class="titulos">Personajes</h2>
+      <p class="text">En esta entrega se presentan 5 personajes con características y habilidades únicas. Sus nombres fueron 
+        tomados de la lengua guaraní como una forma de homenajear la cosmovisión de este pueblo originario, que valoraba
+        profundamente la conexión con la naturaleza y el equilibrio entre las especies.
+      </p>
 
-    <p class="mensaje">Gracias por acompañarnos. ¡Volvé pronto para unirte a la resistencia carpincha!</p>
-  </div>
+      <div class="personajes-container">
+      <div class="card-personaje" 
+      data-nombre="El Comandante" 
+      data-descripcion="Líder de la resistencia y legendario estratega de los humedales, 
+      sobreviviente de las primeras invasiones humanas. Sabio y respetado por todos. 
+      Es el responsable de organizar la gran huída.||||"
+      data-imagen="./assets/comandante.png"
+      data-extra="Habilidad especial: Defensor natural. Todas las unidades bajo su
+      mando reciben un +20% de defensa.">
+      
+     <img src="./assets/comandante.png" alt="El Comandante" class="imagen-personaje">
+      <p>El Comandante</p>
+      </div>
 
-  
+      <div class="card-personaje" 
+      data-nombre="Arami" 
+      data-descripcion="Significado: Cielito||||Exploradora. La más joven del escuadrón y con un gran instinto
+      de supervivencia. Curiosa por naturaleza.||||"
+      data-imagen="./assets/arami.png"
+      data-extra="Habilidad especial: Olfato agudo. Puede detectar recursos
+      ocultos y objetos secretos en el mapa.">
+      
+     <img src="./assets/arami.png" alt="Arami" class="imagen-personaje">
+      <p>Arami</p>
+      </div>
+
+      <div class="card-personaje" 
+      data-nombre="Katu" 
+      data-descripcion="Significado: Fuerte, valiente||||Ex-guardia de los pantanos, musculoso y rústico.
+      Prefiere resolver los conflictos con potencia de fuego. Tiene
+      poca paciencia pero un gran corazón.||||"
+      data-imagen="./assets/katu.png"
+      data-extra="Habilidad especial: Furia del carpincho. Las unidades bajo su
+      mando causan +15% de daño en combate cuerpo a cuerpo.">
+      
+     <img src="./assets/katu.png" alt="Katu" class="imagen-personaje">
+      <p>Katu</p>
+      </div>
+
+      <div class="card-personaje" 
+      data-nombre="Jasy" 
+      data-descripcion="Significado: Luna||||Especialista en tecnología. Científica autodidacta que aprendió
+      a hackear drones y maquinaria humana. Tranquila, meticulosa
+      y letal en el campo tecnológico.||||"
+      data-imagen="/assets/Jasy.png"
+      data-extra="Habilidad especial: Interferencia. Los enemigos cercanos se
+      ralentizan por 3 segundos cada vez que entran en combate.">
+      
+     <img src="./assets/Jasy.png" alt="Jasy" class="imagen-personaje">
+      <p>Jasy</p>
+      </div>
+
+      <div class="card-personaje" 
+      data-nombre="Pari" 
+      data-descripcion="Significado: Experto en atrapar peces.||||Ingeniero táctico. Es el encargado de diseñar y reparar
+      tanques con materiales reciclados. Un genio improvisador,
+      siempre encuentra soluciones creativas.||||"
+      data-imagen="./assets/pari.png"
+      data-extra="Habilidad especial: Optimización. Las unidades bajo su mando
+      tienen +20% de velocidad.">
+      
+     <img src="./assets/pari.png" alt="Pari" class="imagen-personaje">
+      <p>Pari</p>
+      </div>  
+      </div> 
+
+      <h3 class="titulos subtitulos-tanques">Tanques</h3>
+      <div class="personajes-container tanques-container">
+         <div class="card-personaje" 
+      data-nombre="Chatarra 1" 
+      data-descripcion="Tanque improvisado con piezas de chatarra abandonada por los humanos. Los carpinchos lo reutilizaron con ingenio para la resistencia."
+      data-imagen="./assets/chatarra1.png"
+      data-extra="">
+      
+     <img src="./assets/chatarra1.png" alt="tanque" class="imagen-personaje">
+      <p>Chatarra 1</p>
+      </div>
+
+       <div class="card-personaje" 
+      data-nombre="AlgaTank" 
+      data-descripcion="Tanque cubierto con algas de los humedales. Lleva una flor de Irupé como estandarte, símbolo de conexión con la naturaleza."
+      data-imagen="./assets/algatank.png"
+      data-extra="">
+      
+     <img src="./assets/algatank.png" alt="tanque" class="imagen-personaje">
+      <p>AlgaTank</p>
+      </div>
+
+       <div class="card-personaje" 
+      data-nombre="Tanque Lunar" 
+      data-descripcion="Construido con rocas recolectadas durante el paso de los carpinchos por la Luna. Su blindaje está hecho de piedra lunar."
+      data-imagen="./assets/TanqueLunar.png"
+      data-extra="">
+      
+     <img src="./assets/TanqueLunar.png" alt="tanque" class="imagen-personaje">
+      <p>Tanque Lunar</p>
+      </div>
+      </div>
+
+      <h3 class="titulos subtitulos-enemigos">Enemigos</h3>
+      <div class="personajes-container enemigos-container">
+        <div class="card-personaje" 
+      data-nombre="Rotox" 
+      data-descripcion="Jefe de Marte, planeta rojo inhabitable por su arena tóxica.
+      Provoca tormentas de arena radioactiva que dañan las unidades del jugador."
+      data-imagen="./assets/rotox.png"
+      data-extra="">
+      
+     <img src="./assets/rotox.png" alt="Rotox" class="imagen-personaje">
+      <p>Rotox</p>
+      </div>
+
+      <div class="card-personaje" 
+      data-nombre="Korpio" 
+      data-descripcion="Jefe de Secarria. Criatura gigante nativa del desierto.
+      Se esconde bajo tierra y embosca por sorpresa a las unidades enemigas."
+      data-imagen="./assets/korpio.png"
+      data-extra="">
+      
+     <img src="./assets/korpio.png" alt="Korpio" class="imagen-personaje">
+      <p>Korpio</p>
+      </div>
+
+      <div class="card-personaje" 
+      data-nombre="CrioGolem" 
+      data-descripcion="Jefe de Nevrion. Golem de hielo alimentado por energía del
+      núcleo del planeta. Congela áreas del mapa y bloquea caminos con estalactitas."
+      data-imagen="./assets/criogolem.png"
+      data-extra="">
+      
+     <img src="./assets/criogolem.png" alt="Criogolem" class="imagen-personaje">
+      <p>CrioGolem</p>
+      </div>
+      <div class="card-personaje" 
+      data-nombre="AlfaBot" 
+      data-descripcion="Jefe de Metalonia. Unidad automática de defensa, controlada por una inteligencia artificial corrupta.
+      Ataca con precisión y es resistente al hackeo."
+      data-imagen="./assets/alfabot.png"
+      data-extra="">
+      
+     <img src="./assets/alfabot.png" alt="Alfabot" class="imagen-personaje">
+      <p>AlfaBot</p>
+      </div>
+      <div class="card-personaje" 
+      data-nombre="Cordy" 
+      data-descripcion="Jefe de Biohelix. Organismo parasitario vegetal que infecta otras formas de vida. 
+      Lanza esporas que convierten unidades aliadas en enemigos si no se neutralizan a tiempo."
+      data-imagen="./assets/cordy.png"
+      data-extra="">
+      
+     <img src="./assets/cordy.png" alt="Cordy" class="imagen-personaje">
+      <p>Cordy</p>
+      </div>
+      
+
+      
+
+      <!-- Modal -->
+      <div id="modal" class="modal">
+      <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <!-- texto a la izquierda -->
+       <div class="modal-texto">
+      <h3 id="modal-title"></h3><br>
+      <p id="modal-description"></p>
+      <p id="modal-extra"></p>
+      </div>
+     <!-- imagen a la derecha -->
+      <img id="modal-image" src="" alt="Personaje" class="modal-img" />
+      </div>
+      </div>
+       </div>
+
+    </section>
+    <section id="historia" class="text-container">
+      <h3 class="titulos">Historia</h3>
+      <div class="historia-contenido">
+        <p class="text">En un futuro no tan lejano, la Tierra cambió para siempre. El avance de la
+        humanidad fue implacable: los humedales, antiguas tierras libres y pacíficas, fueron
+        reemplazados por countries de lujo, cemento y seguridad privada. Las especies
+        nativas fueron desplazadas, pero una en particular decidió resistir: los carpinchos.​
+        Liderados por El Comandante, un veterano carpincho estratega, organizaron la
+        huida más grande jamás vista. Con ingenio, chatarra reciclada y una voluntad
+        inquebrantable, construyeron naves y tanques con la esperanza de encontrar un
+        nuevo hogar entre las estrellas.​
+        Pero el universo no era el paraíso prometido. Lo que encontraron fue un caos
+        interplanetario: mundos invadidos, alianzas rotas, razas hostiles, recursos escasos.
+       ¿Defender, atacar, sobrevivir? La decisión... está en tus manos.</p>
+       <img src="./assets/carpi-removebg-preview.png" alt="carpi" class="imagen-historia">
+       </div>
+    </section>
+    <section id="impacto" class="text-container">
+      <h3 class="titulos">Impacto Cultural</h3>
+      <p class="text">Carpitanks no es solo un juego de estrategia y acción, es también una propuesta
+        que invita a la reflexión sobre problemáticas ambientales y éticas actuales, a través
+        de una narrativa entretenida y personajes carismáticos.
+        El conflicto inicial del juego parte de una realidad reconocible: la urbanización
+        desmedida y la destrucción de hábitats naturales. La resistencia de los carpinchos
+        representa a todas las especies desplazadas por el avance humano, cuestionando
+        las prioridades de la sociedad moderna y visibilizando el valor de los ecosistemas.</p>
+
+    </section>
+    
+    <section id="prototipo" class="text-container">
+      <h3 class="titulos">¿Cómo se juega?</h3>
+      <div class="prototipo-container">
+      <ul class="text text-list">
+        <li>Elegí un personaje</li>
+        <li>Elegí un tanque</li>
+        <li>Barra espaciadora dispara</li>
+        <li>Mouse apunta</li>
+        <li>Click del mouse mueve el tanque</li>
+        <li>Tecla 1 y 2 cambia de nivel</li>
+      </ul>
+      <div class="juego">
+      <iframe src="https://scratch.mit.edu/projects/1187711054/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  <section>      
+  <form id="formulario-contacto" autocomplete="off">
+    <fieldset class="text-container">
+      <legend id="contacto" class="titulos"><b>Contacto</b></legend>
+      
+      <input type="text" name="nombre" class="input-nombre" placeholder="Nombre"
+        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
+        title="Por favor, ingresa solo letras y espacios"
+        required><br><br>
+
+      <input type="email" name="correo" class="input-correo" placeholder="Correo Eléctronico"
+        required 
+        title="Por favor, ingresa un correo electrónico válido"><br><br>
+
+      <label for="mensaje"></label>
+      <textarea name="mensaje" id="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje" class="mensaje-placeholder"></textarea><br><br>
+
+      <input type="submit" value="Enviar" class="enviar">
+      <div id="mensaje-envio" class="mensaje-envio"></div>
+
+    </fieldset>
+  </form>     
+</section>
+
+  </main>
   <footer>
         <p>&copy; 2025 Todos los derechos reservados.</p>
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+
 </body>
 </html>

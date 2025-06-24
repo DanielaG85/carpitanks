@@ -5,51 +5,584 @@
 
 body {
   padding: 0;
-  background: #032229;
+  margin: 0;
+  background:#032229;
   font-family: 'Press Start 2P', monospace;
   color: #f5f5f5;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   min-height: 100vh
 }
 
-.contenedor {
-  padding: 20px;
-  max-width: 800px;
-}
+/* Header */
 
-h1 {
-  font-size: 2rem;
+header {
+  width: 100%;
+  background-color: #021a1e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   color: #df7218;
-  margin-bottom: 10px;
+  
+  position: relative;
+  background: url('./assets/fondoJuego.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 1000px rgba(3, 34, 41, 0.7); /* capa oscura para contraste */
 }
 
-.subtitulo {
-  font-size: 1rem;
-  margin-bottom: 20px;
+.header-background {
+  margin-top: 20px;
+  text-align: center;
+  color: #df7218;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.mensaje {
+
+/* Imagen del tanque */
+.tank-image {
+  width: 350px;
+  align-self: center;
+}
+
+/* CTA*/
+.header-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.cta-container {
+  text-align: center;
+  color: #fff;
+  max-width: 400px;
+}
+
+.titulo-juego {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #df7218;
+  letter-spacing: 1.5px;
+  text-transform: uppercase; 
+}
+
+.btn-cta {
+  background-color: #df7218;
+  color: #032229;
+  padding: 12px 24px;
+  text-decoration: none;
   font-size: 0.9rem;
-  color: #cccccc;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-#contador {
-  font-size: 1.5rem;
-  color: #ffcb6b;
-  margin: 20px 0;
+.btn-cta:hover {
+  background-color: #ff8c42;
 }
-img{
+
+/* Navbar */
+
+nav {
+  width: 100%;
+  background-color: rgba(1, 18, 22, 0.7);
+  padding: 12px 20px;
+  
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content:space-evenly;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  
+}
+
+nav ul li a {
+  color: #df7218;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  
+}
+
+nav ul li a:hover {
+  color: #ffff;
+}
+
+/* Main */
+
+main {
+  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.titulos{
+  font-size: 25px;
+  color: #df7218;
+  
+}
+
+.titulo-enemigos, .titulo-tanque{
+  font-size: 25px;
+  color: #df7218;
+  text-align: left;
+  
+}
+
+/* Seccion trailer*/
+
+.trailer-container{
+  margin: 20px;
+  text-align: center;
+}
+
+.trailer-text{
   width: 50%;
   height: auto;
-  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 35px;
+  color: #df7218;
+  letter-spacing: 1.5px;
+  text-transform: uppercase; 
+
+}
+video{
+  width: 70%;
+  margin-top: 30px;
+  align-items: center;
 }
 
+/* Personajes */
+#personajes{
+  margin-top: 50px;
+}
+
+.card-personaje{
+  margin-top: 10px;
+  width: 200px;
+}
+.imagen-personaje {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.personajes-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content:space-evenly;
+  margin-top: 20px;
+}
+
+.card-personaje {
+  background-color: #043f4e;
+  border-radius: 10px;
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px #df7218;
+  transition: transform 0.2s ease;
+}
+
+.card-personaje:hover {
+  transform: scale(1.05);
+}
+
+.subtitulos-enemigos, .subtitulos-tanques{
+  text-align: left;
+  width: 80%;
+  margin: 30px 0 10px 15px;
+}
+
+
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #032229;
+  color: #df7218;
+  padding: 40px;
+  border-radius: 8px;
+  width: 900px;
+  max-width: 90%;
+  text-align: left;
+  line-height: 2;
+  box-shadow: 0 0 15px #df7218;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  
+}
+.modal-img{
+  max-width: 200px;
+  height: auto;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-top: 40px;
+
+}
+.modal-texto {
+  flex: 1;
+}
+
+.close {
+  position: absolute;
+  top: 10px; 
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #df7218;
+}
+
+/* Historia - Impacto cultural*/
+
+#historia, #impacto{
+  margin-top: 50px;
+}
+
+.text-container{
+  border: 1px solid #df7218;
+  padding: 20px;
+  margin: 20px;
+}
+
+.text{
+  margin-top: 10px;
+  line-height:2;
+}
+
+.historia-section {
+  padding: 20px;
+}
+
+.historia-contenido {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.historia-contenido .text {
+  flex: 1 1 60%;
+ 
+}
+
+.imagen-historia {
+  flex: 1 1 30%;
+  max-width: 300px;
+  height: auto;
+  
+}
+
+/* Prototipo */
+#prototipo{
+  margin-top: 50px;
+}
+.prototipo-container{
+  margin: 20px;
+  display: flex;
+  flex-direction:row;
+}
+
+.text-list{
+  padding: 15px;
+  margin-right: 50px;
+}
+/* Contacto */
+
+.mensaje-placeholder, .input-nombre, .input-correo{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 15px;
+  background-color: rgb(182, 178, 159);
+  color: #021a1e;
+}
+
+.enviar{
+  background-color: #df7218;
+  color: #021a1e;
+  font-size: 15px;
+  font-family: 'Press Start 2P', monospace;
+  padding: 5px;
+}
+
+/* Mensaje envío*/
+.mensaje-envio {
+  margin-top: 15px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
+
+.mensaje-exito {
+  background-color: #2a885e;
+  color: #032229;
+  display: block;
+}
+
+.mensaje-error {
+  background-color: #e74c3c;
+  color: #fff;
+  display: block;
+}
+
+/* Footer */
 footer{
   margin-top: auto;
   font-size: 10px;
 }
+
+
+
+/* Media Queries para hacer toda la página responsive */
+@media (max-width: 768px) {
+  /* Header */
+  .header-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .tank-image {
+    width: 80%;
+  }
+
+  /* Trailer */
+  .trailer-text {
+    width: 90%;
+    font-size: 22px;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  /* Personajes */
+  .personajes-container {
+    justify-content: center;
+  }
+
+  .card-personaje {
+    width: 80%;
+    max-width: 300px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  .subtitulos-enemigos, .subtitulos-tanques {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  /* Modal */
+  .modal {
+    overflow-y: auto; 
+    align-items: flex-start;  
+    padding: 20px;  
+  }
+
+  
+  .modal-content {
+      flex-direction: column;  
+      width: 90vw;             
+      height: auto;            
+      overflow-y: auto;        
+      padding: 20px;
+    }
+
+  .modal-img {
+    max-width: 50%;         
+    max-height: 300px;       
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  .modal-texto {
+    width: 100%;
+  }
+
+  /* Historia */
+  .historia-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .historia-contenido .text {
+    flex: 1 1 100%;
+    text-align: left;
+  }
+
+  .imagen-historia {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Prototipo */
+  .prototipo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-list {
+    margin-right: 0;
+    padding: 10px;
+  } 
+
+  /* Formulario */
+  .input-nombre, .input-correo, .mensaje-placeholder {
+    width: 100%;
+  }
+
+  .enviar {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .card-personaje {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .personajes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    width: 95vw;
+    height: auto;
+  }
+
+  .modal-img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .trailer-text {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .titulo-juego {
+    font-size: 20px;
+  }
+   /* Títulos más chicos y sin desborde */
+  .titulos, .titulo-juego, .trailer-text {
+    font-size: 18px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Párrafos y texto en general */
+  .text, .text-list, p {
+    font-size: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+  }
+
+  /* Contenedores de texto */
+  .text-container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  /* Cards: una por fila, texto no se desborda */
+  .personajes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-personaje {
+    width: 90%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  /* Modal adaptado */
+  .modal-content {
+    flex-direction: column;
+    width: 95vw;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .modal-img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Trailer y Scratch responsive */
+  .trailer-text {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  video, iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Formulario */
+  .input-nombre,
+  .input-correo,
+  .mensaje-placeholder {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .enviar {
+    width: 100%;
+    font-size: 14px;
+  }
+
+}
+
