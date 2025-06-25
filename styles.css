@@ -163,11 +163,24 @@ main {
   text-transform: uppercase; 
 
 }
-video{
-  width: 70%;
-  margin-top: 30px;
-  align-items: center;
+
+.trailer-video{
+  position: relative;
+  padding-bottom: 56.25%; /* Relación 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 60%; /* ✅ Tamaño máximo deseado */
+  margin: 30px auto; /* Centra el video */
 }
+
+.trailer-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 /* Personajes */
 #personajes{
@@ -313,6 +326,7 @@ video{
   flex-direction:row;
 }
 
+
 .text-list{
   padding: 15px;
   margin-right: 50px;
@@ -389,10 +403,10 @@ footer{
     font-size: 22px;
   }
 
-  video {
-    width: 100%;
+  .trailer-video {
+    max-width: 90%; 
+    padding-bottom: 60%; 
   }
-
   /* Personajes */
   .personajes-container {
     justify-content: center;
@@ -498,12 +512,7 @@ footer{
   .modal-img {
     max-width: 90%;
     margin: 0 auto;
-  }
-
-  iframe {
-    width: 100%;
-    height: auto;
-  }
+  }  
 
   .trailer-text {
     width: 100%;
@@ -542,7 +551,7 @@ footer{
   }
 
   .card-personaje {
-    width: 90%;
+    width: 60%;
     font-size: 12px;
     padding: 10px;
   }
@@ -565,10 +574,15 @@ footer{
     font-size: 16px;
     width: 100%;
   }
+  .trailer-video{
+    margin-top: 10px;
+  }
+ 
 
-  video, iframe {
+  iframe {
     width: 100%;
-    height: auto;
+    margin: 0;
+    height: 300px;
   }
 
   /* Formulario */
